@@ -1,14 +1,14 @@
 print("Guess the number 0 - 9")
 print("You have 2 chances")
-ans = 7
+ans = 7 # ibahin mo kung gusto mo
 guess_count = 0
-guess_limit = 2 # add number to add limit
+guess_limit = 2 # dagdagan or bawasan mo yung limit
 
 while guess_count < guess_limit:
-    guess = int(input("What number? "))
+    guess = int(input("Anong number? "))
     guess_count += 1
     if guess == ans:
-        print("You're right! Congratulations!")
+        print("Tama ka! Congrats!")
         break
 else:
-    print("You're wrong! Try again.")
+    print("Mali ka! Ulitin mo.")
