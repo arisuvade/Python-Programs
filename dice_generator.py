@@ -21,3 +21,4 @@ while True:
         break
     else:
         print("To roll the dice, type (y) if yes and (n) if no.")
+        break
