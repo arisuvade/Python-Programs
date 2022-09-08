@@ -1,5 +1,8 @@
 import random
 
+print("Dice Generator")
+print("\n")
+
 die = [1, 2, 3, 4, 5, 6]
 user = input("Do you want to roll the dice? (y/n) ")
 
@@ -15,6 +18,8 @@ while True:
             roll_again = True
         elif again == "n":
             print("Ok... bye!")
+        else:
+            print("To roll the dice again, type (y) if yes and (n) if no.")
             break
     elif user == "n":
         print("Ok... bye!")
