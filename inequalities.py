@@ -1,6 +1,6 @@
 print("Greater than, Less than, or Equal")
 
-first = int(input("First Number: "))  # change to float if you want decimals
+first = int(input("First Number: "))  # change mo sa float if gusto mo ng may decimals
 second = int(input("Second Number: "))
 
 if first > second:
