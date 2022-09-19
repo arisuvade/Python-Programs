@@ -25,7 +25,7 @@ def main():
                 continue
 
     average = get_average(grades)
-    print(f"Average: {average}")
+    print(f"Average: {average:.2f}")
 
 
 def get_average(n):
