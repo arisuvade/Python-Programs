@@ -14,7 +14,7 @@ def main():
 
     for _ in range(input_subjects):
         while True:
-            print(subjects + 1, ": ", end="")
+            print(subjects + 1, ": ", sep="", end="")
             try:
                 input_grade = int(input())
                 subjects += 1
