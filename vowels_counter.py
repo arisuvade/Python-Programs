@@ -1,28 +1,23 @@
-import sys
-
-
 def main():
-    word = get_word()
-    vowels_count = vowels_counter(word)
-    print(f"Vowels count: {vowels_count}")
+    text = get_text()
+    result = palindrome_validator(text)
+    print(result)
 
 
-def get_word():
-    word = input("Word: ")
-    words = word.replace(" ", "")
-    if words.isalpha():
-        return words
+def get_text():
+    while True:
+        text = input("Text: ")
+        if text.isalpha():
+            return text
+        else:
+            continue
+
+
+def palindrome_validator(text):
+    if text == text[::-1]:
+        return f"{text.capitalize()} is a palindrome."
     else:
-        sys.exit("Error: Invalid input")
-
-
-def vowels_counter(word):
-    vowels = "AEIOUaeiou"
-    vowels_count = 0
-    for letter in word:
-        if letter in vowels:
-            vowels_count += 1
-    return vowels_count
+        return f"{text.capitalize()} is not a palindrome."
 
 
 if __name__ == "__main__":
