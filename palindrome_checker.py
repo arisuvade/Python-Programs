@@ -1,6 +1,3 @@
-import sys
-
-
 def main():
     text = get_text()
     result = palindrome_validator(text)
@@ -8,11 +5,12 @@ def main():
 
 
 def get_text():
-    text = input("Text: ")
-    if text.isalpha():
-        return text
-    else:
-        sys.exit("Invalid input")
+    while True:
+        text = input("Text: ")
+        if text.isalpha():
+            return text
+        else:
+            continue
 
 
 def palindrome_validator(text):
