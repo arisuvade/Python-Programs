@@ -1,5 +1,4 @@
 import math
-import sys
 
 
 def main():
@@ -9,11 +8,12 @@ def main():
 
 
 def get_number():
-    try:
-        number = int(input("Number: "))
-    except ValueError:
-        sys.exit("Error: Invalid input")
-    return number
+    while True:
+        try:
+            number = int(input("Number: "))
+            return number
+        except ValueError:
+            continue
 
 
 def square_root(n):
