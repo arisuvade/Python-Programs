@@ -5,12 +5,8 @@ def main():
 
 
 def get_text():
-    while True:
-        text = input("Text: ")
-        if text.isalpha():
-            return text
-        else:
-            continue
+    text = input("Text: ")
+    return text
 
 
 def is_isogram(text):
