@@ -1,6 +1,3 @@
-import sys
-
-
 def main():
     word = get_word()
     consonants_count = consonants_counter(word)
@@ -8,12 +5,13 @@ def main():
 
 
 def get_word():
-    word = input("Word: ")
-    words = word.replace(" ", "")
-    if words.isalpha():
-        return words
-    else:
-        sys.exit("Error: Invalid input")
+    while True:
+        word = input("Word: ")
+        words = word.replace(" ", "")
+        if words.isalpha():
+            return words
+        else:
+            continue
 
 
 def consonants_counter(word):
