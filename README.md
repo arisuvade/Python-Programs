@@ -1,3 +1,3 @@
 Simple and short python programs.
-Software used:
+Code editor used:
 vscode
