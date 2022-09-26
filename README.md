@@ -1,6 +1,6 @@
 # Python
 
-**Simple and ~~short~~ _programs_**
+**Simple programs**
 
 - Calculator
 - Simple Games
