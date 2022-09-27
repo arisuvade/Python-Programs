@@ -26,3 +26,4 @@
 - Averaging
 - Word Checker
 - Timer
+- Converters
