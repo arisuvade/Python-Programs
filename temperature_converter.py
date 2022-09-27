@@ -7,7 +7,7 @@ def main():
 def get_input():
     while True:
         try:
-            num = int(input("Number: "))
+            num = float(input("Number: "))
             break
         except ValueError:
             continue
