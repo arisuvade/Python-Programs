@@ -1,15 +1,13 @@
-# Python
-
-**Simple programs**
+# Simple Programs
 
 - Calculator
-- Simple Games
 - Mathematical Functions
 - Currency Converter
 - Palindrome
 - Anagram
 - Isogram
 - Pangram
+- Guessing Games
 - Vowels Counter and Remover
 - Consonants Counter and Remover
 - Calendar
