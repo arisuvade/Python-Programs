@@ -25,3 +25,4 @@
 - Word Checker
 - Timer
 - Converters
+- Quizzes
