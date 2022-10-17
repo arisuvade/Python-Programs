@@ -100,16 +100,18 @@ def get_color():
             print("Invalid color")
 
 
+def roll():
+    colors = ["Yellow", "White", "Pink", "Blue", "Red", "Green"]
+    color = random.choice(colors)
+    return color
+
+
 def color_game(colors, bet, total_bet, deposit, how_many):
     balance = deposit
     balance -= total_bet
     winning_price = bet * 2
 
-    colors = ["Yellow", "White", "Pink", "Blue", "Red", "Green"]
-    d1 = random.choice(colors)
-    d2 = random.choice(colors)
-    d3 = random.choice(colors)
-    dice = [d1, d2, d3]
+    dice = [roll(), roll(), roll()]
     print("Winning colors:", *dice)
 
     for color in colors:
