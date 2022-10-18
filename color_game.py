@@ -58,7 +58,7 @@ def get_deposit():
     while True:
         try:
             deposit = int(input("Deposit: ₱"))
-            if MIN_DEPOSIT >= deposit % MIN_BET == 0:
+            if MIN_DEPOSIT >= deposit % MIN_BET == 0 and deposit != 0:
                 return deposit
             else:
                 print("Invalid deposit")
@@ -70,7 +70,7 @@ def get_bet():
     while True:
         try:
             bet = int(input("Bet: ₱"))
-            if MIN_BET >= bet % MIN_BET == 0:
+            if MIN_BET >= bet % MIN_BET == 0 and bet != 0:
                 return bet
             else:
                 print("Invalid bet")
@@ -84,6 +84,7 @@ def how_many_colors():
             how_many = int(input("How many colors[1-6]: "))
         except ValueError:
             print("Invalid input")
+            continue
 
         if how_many in range(1, 7):
             return how_many
