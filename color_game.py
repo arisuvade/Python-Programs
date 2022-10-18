@@ -1,5 +1,6 @@
 import random
 import sys
+import time
 
 MIN_DEPOSIT = 5
 MIN_BET = 5
@@ -113,6 +114,14 @@ def color_game(colors, bet, total_bet, deposit, how_many):
     winning_price = bet * 2
 
     dice = [roll(), roll(), roll()]
+    print("Rolling\r", end="")
+    time.sleep(0.5)
+    print("Rolling.\r", end="")
+    time.sleep(0.5)
+    print("Rolling..\r", end="")
+    time.sleep(0.5)
+    print("Rolling...\r", end="")
+    time.sleep(0.5)
     print("Winning colors:", *dice)
 
     for color in colors:
