@@ -1,9 +1,69 @@
 import random
 import sys
-import time
 
 MIN_DEPOSIT = 5
 MIN_BET = 5
+
+
+def get_deposit():
+    while True:
+        try:
+            deposit = int(input("Deposit: ₱"))
+            if MIN_DEPOSIT >= deposit % MIN_BET == 0 and deposit != 0:
+                return deposit
+            print("Invalid deposit")
+        except ValueError:
+            print("Invalid input")
+
+
+def get_bet():
+    while True:
+        try:
+            bet = int(input("Bet: ₱"))
+            if MIN_BET >= bet % MIN_BET == 0 and bet != 0:
+                return bet
+            print("Invalid bet")
+        except ValueError:
+            print("Invalid input")
+
+
+def colors_count():
+    while True:
+        try:
+            how_many = int(input("Colors count[1-6]: "))
+        except ValueError:
+            print("Invalid input")
+            continue
+
+        if how_many in range(1, 7):
+            return how_many
+        print("Invalid number")
+
+
+def get_color():
+    while True:
+        color = input("Color: ").capitalize()
+        if color in ["Yellow", "White", "Pink", "Blue", "Red", "Green"]:
+            return color
+        print("Invalid color")
+
+
+def roll():
+    colors = ["Yellow", "White", "Pink", "Blue", "Red", "Green"]
+    return random.choice(colors)
+
+
+def color_game(colors, bet, total_bet, deposit):
+    balance = deposit - total_bet
+
+    dice = [roll(), roll(), roll()]
+    print("Winning colors:", *dice)
+
+    for color in colors:
+        if color in dice:
+            balance += bet * 2
+
+    return balance
 
 
 def main():
@@ -16,17 +76,17 @@ def main():
             if deposit < bet:
                 print("Not enough balance")
                 bet = get_bet()
-            else:
-                break
+                continue
+            break
 
         while True:
-            how_many = how_many_colors()
+            how_many = colors_count()
             total_bet = bet * how_many
             if deposit < total_bet:
                 print("Not enough balance")
                 bet = get_bet()
-            else:
-                break
+                continue
+            break
 
         print(f"Total bet: ₱{total_bet}")
         print("Colors: Yellow, White, Pink, Red, Blue, and Green")
@@ -34,7 +94,7 @@ def main():
         for _ in range(how_many):
             colors.append(get_color())
 
-        balance = color_game(colors, bet, total_bet, deposit, how_many)
+        balance = color_game(colors, bet, total_bet, deposit)
         print(f"Balance: ₱{balance}")
         deposit = balance
         if deposit == 0:
@@ -53,84 +113,6 @@ def main():
                 print("Invalid input")
 
     print(f"You left with ₱{deposit}")
-
-
-def get_deposit():
-    while True:
-        try:
-            deposit = int(input("Deposit: ₱"))
-            if MIN_DEPOSIT >= deposit % MIN_BET == 0 and deposit != 0:
-                return deposit
-            else:
-                print("Invalid deposit")
-        except ValueError:
-            print("Invalid input")
-
-
-def get_bet():
-    while True:
-        try:
-            bet = int(input("Bet: ₱"))
-            if MIN_BET >= bet % MIN_BET == 0 and bet != 0:
-                return bet
-            else:
-                print("Invalid bet")
-        except ValueError:
-            print("Invalid input")
-
-
-def how_many_colors():
-    while True:
-        try:
-            how_many = int(input("How many colors[1-6]: "))
-        except ValueError:
-            print("Invalid input")
-            continue
-
-        if how_many in range(1, 7):
-            return how_many
-        else:
-            print("Invalid number")
-
-
-def get_color():
-    while True:
-        color = input("Color: ").capitalize()
-        if color in ["Yellow", "White", "Pink", "Blue", "Red", "Green"]:
-            return color
-        else:
-            print("Invalid color")
-
-
-def roll():
-    colors = ["Yellow", "White", "Pink", "Blue", "Red", "Green"]
-    color = random.choice(colors)
-    return color
-
-
-def color_game(colors, bet, total_bet, deposit, how_many):
-    balance = deposit
-    balance -= total_bet
-    winning_price = bet * 2
-
-    dice = [roll(), roll(), roll()]
-    print("Rolling\r", end="")
-    time.sleep(0.5)
-    print("Rolling.\r", end="")
-    time.sleep(0.5)
-    print("Rolling..\r", end="")
-    time.sleep(0.5)
-    print("Rolling...\r", end="")
-    time.sleep(0.5)
-    print("Winning colors:", *dice)
-
-    for color in colors:
-        if color in dice:
-            for die in dice:
-                if color in die:
-                    balance += winning_price
-
-    return balance
 
 
 if __name__ == "__main__":
